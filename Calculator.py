@@ -40,7 +40,7 @@ def calculator():
         output = calculator_function(num1, num2)
         print(f"{num1} {ope_symb} {num2} = {output}")
 
-        should_continue = input(f"Enter 'y' to continue calculation with {output}, or 'n' to exit: ").lower()
+        should_continue = input(f"Enter 'y' to continue calculation with {output}, or 'n' to start new calculation or 'x' to exit: ").lower()
         
         if should_continue == 'y':
             num1 = output
@@ -48,8 +48,9 @@ def calculator():
             continue_flag = False
             os.system('cls' if os.name == 'nt' else 'clear')  # Works on Windows & Unix
             print("Calculator exited.")
+            calculator()
         else:
             continue_flag = False
-            print("Invalid choice. Exiting.")
+            print("Bye")
 
 calculator()
